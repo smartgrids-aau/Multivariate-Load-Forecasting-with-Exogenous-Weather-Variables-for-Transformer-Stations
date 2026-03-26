@@ -1,7 +1,6 @@
 # Multivariate Load Forecasting with Exogenous Weather Variables for Transformer Stations
 
-**Topic:** Electricity Demand Forecasting
-
+**Topic:** Electricity Demand Forecasting  
 **Credit Load:** 6 ECTS (150 hours)
 
 
@@ -25,8 +24,7 @@ You will be provided with a **synthetic dataset** simulating transformer station
 ## Your Task
 Your work is organized into three connected phases:
 
-**Phase 1 — Multivariate Forecasting Model Benchmarking**
-
+**Phase 1 — Multivariate Forecasting Model Benchmarking**  
 You will implement and evaluate at least four forecasting models from TSLib across two prediction horizons: short-term (24–48 hours ahead) and long-term (up to 7 days ahead). The required models are:
 * **TimeXer** — Transformer-based model with native support for exogenous variables (your primary model of interest)
 * **iTransformer** — Inverted-attention Transformer, strong state-of-the-art baseline for multivariate forecasting
@@ -34,12 +32,10 @@ You will implement and evaluate at least four forecasting models from TSLib acro
 * **DLinear** — Simple linear model serving as a sanity-check baseline
 For each model and horizon combination, report MSE and MAE on the test set. Present results in a structured comparison table.
 
-**Phase 2 — Weather Feature Ablation Study**
-
+**Phase 2 — Weather Feature Ablation Study**  
 To understand which weather variables actually contribute to forecast accuracy, you will conduct a systematic **ablation study**: starting from the full multivariate input (load + all weather features), you will retrain the best-performing model from Phase 1 while removing one weather variable at a time. The change in forecasting error (ΔMSE, ΔMAE) for each removed feature will indicate its marginal predictive value. This analysis will provide practical guidance on which sensor data is worth collecting and maintaining for real-world deployment.
 
-**Phase 3 — Zero-Shot Forecasting Evaluation**
-
+**Phase 3 — Zero-Shot Forecasting Evaluation**  
 TSLib supports evaluation of large pre-trained time series foundation models (Large Time Series Models, LTSMs) in a **zero-shot** setting — meaning the model is applied directly to your dataset without any training. You will evaluate at least **one LTSM** (suggested: Chronos or TiRex) on the same forecasting tasks from Phase 1 and compare its performance against the trained models. This addresses a practically important question: for a grid operator onboarding a new trafo station with no historical data, how useful is a zero-shot foundation model as a cold-start solution?
 
 ## Deliverables
